@@ -16,7 +16,7 @@ filename=$(curl -L "http://localhost:9999/bingWallpaper/getFileName")
 echo filename $filename
 localpath="$localDir/$filename"
 curl -o $localpath -H 'Cache-Control: no-cache' $imgurl
-#osascript -e "                              \
-#    tell application \"System Events\" to   \
-#        tell every desktop to               \
-#            set picture to \"$localpath\""
+osascript -e "                              \
+    tell application \"System Events\" to   \
+        tell every desktop to               \
+            set picture to \"$localpath\""
